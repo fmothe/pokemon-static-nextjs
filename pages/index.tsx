@@ -7,6 +7,7 @@ import { Layout } from "../components/layouts";
 import styles from "../styles/Home.module.css";
 import { pokeApi } from "../api";
 import { PokemonListResponse, SmallPokemon } from "../interfaces";
+import { PokemonCard } from '../components/pokemon';
 
 interface Props {
     pokemons: SmallPokemon[];
@@ -16,23 +17,7 @@ const Home: NextPage<Props> = ({ pokemons }) => {
         <Layout title={"Pokedex"}>
             <Grid.Container gap={2} justify="flex-start">
                 {pokemons.map((pokemon) => (
-                    <Grid xs={6} sm={3} md={2} xl={1} key={pokemon.id}>
-                        <Card hoverable bordered shadow={false} clickable>
-                            <Card.Body css={{ p: 1 }}>
-                                <Card.Image
-                                    src={pokemon.img}
-                                    width={"100%"}
-                                    height={140}
-                                />
-                            </Card.Body>
-                            <Card.Footer>
-                                <Row justify="space-between">
-                                    <Text transform="capitalize"> {pokemon.name} </Text>
-                                    <Text> # {pokemon.id}</Text>
-                                </Row>
-                            </Card.Footer>
-                        </Card>
-                    </Grid>
+                    <PokemonCard pokemon={pokemon} key={pokemon.id} />
                 ))}
             </Grid.Container>
         </Layout>
