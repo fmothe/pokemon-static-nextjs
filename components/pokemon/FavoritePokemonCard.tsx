@@ -1,6 +1,6 @@
 import { Grid, Card } from "@nextui-org/react";
 import { useRouter } from "next/router";
-import React, { FC } from "react";
+import  { FC } from "react";
 
 interface Props{
     id: number
