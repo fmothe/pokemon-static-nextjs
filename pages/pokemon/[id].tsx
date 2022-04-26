@@ -90,17 +90,28 @@ export const getStaticPaths: GetStaticPaths = async (ctx) => {
         paths: pokemons.map((id) => ({
             params: { id: id },
         })),
-        fallback: false,
+        // fallback: false,
+        fallback:'blocking'
     };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     //nothing here goes client side, except what its inside the props
     const { id } = params as { id: string };
+    const pokemon = await getPokemonInfo(id);
+
+    if(!pokemon){
+        return {
+            redirect:{
+                destination: '/',
+                permanent: false
+            }
+        }
+    }
 
     return {
         props: {
-            pokemon: await getPokemonInfo(id),
+            pokemon,
         },
         //Validates the page every 24hs, this allows to incremental static regeneration
         revalidate: 86400,
