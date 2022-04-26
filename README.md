@@ -1,34 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Pokemon-static
+## This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
+
+This is a static webpage created for the course in udemy ['Next.js El framework de React para Produccion'](https://www.udemy.com/share/10610G3@o2saGKt7i5VSQx5dJRgQZGPqspRa5m-V0k_RpUZwjH7SWcbcifI9wvI5Z6hAPMzk/) dictated by Fernando Herrera
+
+## Getting started
+If you decide to clone this repository first of all you must have installed:
+- node(v17.8.0 or higher)
+- yarn(1.22.15 or higher)
+
+After that you can 
+```
+yarn install
+```
+to install all the packages required.
+Then you are able to run a development server:
+```
 yarn dev
 ```
+Open [http://localhost:300](http://localhost:3000) with your browser to see the result
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Project structure is very simple, under components you'll have any custom components, layouts. inside each folder you'll have a barrel .ts file that will be usefull when we want to import those components into another file.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+This project works with local storage in your browser, so becareful and check your local storage you can check its logic in ``` /utils/localfavorites.ts```. please make sure that there isn't already any storage with the same key.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is deployed on [Vercel](https://vercel.com/) u can check it clicking [here](https://pokemon-static-gamma.vercel.app/)
