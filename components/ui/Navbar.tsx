@@ -1,11 +1,13 @@
 import { Button, Input, Link, Spacer, Text, useTheme } from "@nextui-org/react";
 import Image from "next/image";
 import NextLink from "next/link";
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 export const Navbar = () => {
     const { theme } = useTheme();
+
     return (
         <div
             style={{
@@ -37,15 +39,7 @@ export const Navbar = () => {
                 </Link>
             </NextLink>
             <Spacer css={{ flex: 1 }} />
-            {/* <Input 
-                clearable 
-                placeholder="Charmander"
-                bordered
-                rounded 
-                color="primary"
-                contentRight={<FontAwesomeIcon icon={faMagnifyingGlass} style={{color: 'grey'}}/>}
-                type='search' 
-                /> */}
+        
             <Spacer css={{ flex: 1 }} />
 
             <NextLink href="/favorites" passHref>
