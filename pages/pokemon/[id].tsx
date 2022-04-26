@@ -102,6 +102,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         props: {
             pokemon: await getPokemonInfo(id),
         },
+        //Validates the page every 24hs, this allows to incremental static regeneration
+        revalidate: 86400,
     };
 };
 export default PokemonPage;
